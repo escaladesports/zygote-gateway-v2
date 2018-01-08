@@ -9,5 +9,4 @@ functions:
     handler: handler.hello
 
 plugins:
-  - serverless-plugin-webpack
   - serverless-plugin-optimize
