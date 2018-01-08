@@ -5,7 +5,8 @@
   "author": "Kennedy Rose <krose@escaladesports.com>",
   "license": "MIT",
   "scripts": {
-    "build": "sls package"
+    "build": "sls package",
+    "invoke": "sls invoke local -f hello"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
