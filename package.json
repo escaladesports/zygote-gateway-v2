@@ -7,9 +7,11 @@
   "scripts": {
     "build": "serverless package",
     "deploy": "serverless deploy --verbose --stage staging",
+    "deploy-production": "yarn test-production && yn && serverless deploy --verbose --stage production",
     "invoke": "serverless invoke local --function hello",
     "logs": "serverless logs --tail --stage staging --function hello",
-    "test": "serverless invoke test --compilers js:babel-core/register"
+    "test": "serverless invoke test --compilers js:babel-core/register",
+    "test-production": "serverless invoke test --stage production --compilers js:babel-core/register"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
@@ -24,7 +26,8 @@
     "serverless": "^1.25.0",
     "serverless-mocha-plugin": "^1.7.0",
     "serverless-plugin-optimize": "^3.0.4-rc.1",
-    "webpack": "^3.10.0"
+    "webpack": "^3.10.0",
+    "yn-cli": "^1.0.0"
   },
   "dependencies": {
     "dotenv": "^4.0.0",

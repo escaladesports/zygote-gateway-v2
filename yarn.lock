@@ -5016,6 +5016,10 @@ yauzl@^2.4.2:
     buffer-crc32 "~0.2.3"
     fd-slicer "~1.0.1"
 
+yn-cli@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/yn-cli/-/yn-cli-1.0.0.tgz#f40b393a5b5237b24c7461894d2f9c8c8ff78664"
+
 zen-observable-ts@^0.4.4:
   version "0.4.4"
   resolved "https://registry.yarnpkg.com/zen-observable-ts/-/zen-observable-ts-0.4.4.tgz#c244c71eaebef79a985ccf9895bc90307a6e9712"
