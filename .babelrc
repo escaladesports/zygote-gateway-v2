@@ -1,0 +1,12 @@
+{
+	"env": {
+		"es5": {
+			"presets": [
+				"es2015"
+			]
+		}
+	},
+	"plugins": [
+		"syntax-dynamic-import"
+	]
+}
