@@ -4,6 +4,9 @@ provider:
   name: aws
   runtime: nodejs6.10
   region: us-east-1
+  stage: ${opt:stage, 'development'}
+  environment:
+    NODE_ENV: ${opt:stage, 'development'}
 
 functions:
   hello:
@@ -13,6 +16,11 @@ functions:
           path: handler
           method: post
           cors: true
+
+package:
+  individually: true
+  include:
+    - .env*
 
 plugins:
   - serverless-plugin-optimize
