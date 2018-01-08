@@ -10,9 +10,10 @@ functions:
     handler: handler.hello
     events:
       - http:
-        path: handler
-        method: post
-        cors: true
+          path: handler
+          method: post
+          cors: true
 
 plugins:
   - serverless-plugin-optimize
+  - serverless-mocha-plugin

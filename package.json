@@ -5,8 +5,11 @@
   "author": "Kennedy Rose <krose@escaladesports.com>",
   "license": "MIT",
   "scripts": {
-    "build": "sls package",
-    "invoke": "sls invoke local -f hello"
+    "build": "serverless package",
+    "deploy": "serverless deploy --verbose --stage staging",
+    "invoke": "serverless invoke local --function hello",
+    "logs": "serverless logs --tail --stage staging --function hello",
+    "test": "serverless invoke test --compilers js:babel-core/register"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
@@ -17,10 +20,18 @@
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-latest": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
-    "middy": "^0.5.2",
+    "babel-register": "^6.26.0",
     "serverless": "^1.25.0",
+    "serverless-mocha-plugin": "^1.7.0",
     "serverless-plugin-optimize": "^3.0.4-rc.1",
     "webpack": "^3.10.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "middy": "^0.5.2"
+  },
+  "babel": {
+    "presets": [
+      "es2015"
+    ]
+  }
 }
