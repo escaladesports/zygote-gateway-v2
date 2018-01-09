@@ -24,7 +24,6 @@ package:
 
 custom:
   optimize:
-    presets: ['latest']
     plugins: ['transform-object-rest-spread']
 
 plugins:

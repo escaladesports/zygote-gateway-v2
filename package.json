@@ -7,7 +7,8 @@
   "scripts": {
     "build": "serverless package",
     "deploy": "serverless deploy --verbose --stage staging",
-    "deploy-production": "yarn test-production && yn && serverless deploy --verbose --stage production",
+	 "deploy-production": "yarn test-production && yn && serverless deploy --verbose --stage production",
+	 "encrypt": "node utils/encrypt-env",
     "invoke": "serverless invoke local --function hello",
     "logs": "serverless logs --tail --stage staging --function hello",
     "test": "serverless invoke test --compilers js:babel-core/register",
@@ -38,7 +39,7 @@
   },
   "babel": {
     "presets": [
-      "latest"
+      "env"
     ],
     "plugins": [
       "transform-object-rest-spread"
