@@ -6,9 +6,11 @@ function config(options = {}){
 		path: 'env.js',
 		...options
 	}
-	console.log(options)
-	options.path = require(process.cwd(), options.path)
+	options.path = resolve(process.cwd(), options.path)
 	let obj = pathExistsSync(options.path) ? require(options.path) : {}
+	for(let i in obj){
+		process.env[i] = obj[i]
+	}
 }
 
 module.exports = {
