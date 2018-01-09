@@ -1,8 +1,6 @@
 import middy from 'middy'
 import { jsonBodyParser, httpErrorHandler, cors } from 'middy/middlewares'
-import { getKey } from './utils/envdotjs'
-
-console.log(getKey())
+import { unencrypt } from './utils/envdotjs'
 
 // Export function with middleware
 module.exports.hello = middy((event, context, callback) => {
