@@ -12,6 +12,8 @@ node_modules/
 # Development/Environment
 .env
 .env-*
+env.js
+env-*.js
 dist
 .next
 json
