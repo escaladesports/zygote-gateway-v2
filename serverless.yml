@@ -22,6 +22,11 @@ package:
   include:
     - .env*
 
+custom:
+  optimize:
+    presets: ['latest']
+    plugins: ['transform-object-rest-spread']
+
 plugins:
   - serverless-plugin-optimize
   - serverless-mocha-plugin

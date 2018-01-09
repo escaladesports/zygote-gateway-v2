@@ -1,7 +1,7 @@
 {
   "name": "serverless-aws-boilerplate",
   "version": "0.0.0",
-  "main": "index.js",
+  "main": "handler.js",
   "author": "Kennedy Rose <krose@escaladesports.com>",
   "license": "MIT",
   "scripts": {
@@ -30,12 +30,18 @@
     "yn-cli": "^1.0.0"
   },
   "dependencies": {
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-2017": "^0.0.0",
     "dotenv": "^4.0.0",
+    "fs-extra": "^5.0.0",
     "middy": "^0.5.2"
   },
   "babel": {
     "presets": [
-      "es2015"
+      "latest"
+    ],
+    "plugins": [
+      "transform-object-rest-spread"
     ]
   }
 }
