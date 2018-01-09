@@ -14,18 +14,29 @@ export default function (options = {}){
 		options.path = 'env.js.enc'
 		noPath = true
 	}
+	let obj
+	options.path = resolve(process.cwd(), options.path)
 
-	// TODO: Unencrypt
+
+	// Import encrypted file
 	if(extname(options.path) === '.enc'){
-
+		if (pathExistsSync(options.path)) {
+			obj = unencrypt(options)
+		}
+		else if(!noPath){
+			options.path = options.path.replace(/.enc$/, '')
+		}
 	}
 
-	// Import env file
-	options.path = resolve(process.cwd(), options.path)
-	let obj = pathExistsSync(options.path) ? require(options.path) : {}
+	// Import js file
+	if (!obj && pathExistsSync(options.path)) {
+		obj = require(options.path)
+	}
 
 	// Expose variables
-	for(let i in obj){
-		process.env[i] = obj[i]
+	if (obj) {
+		for (let i in obj) {
+			process.env[i] = obj[i]
+		}
 	}
 }
