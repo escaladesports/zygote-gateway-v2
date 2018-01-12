@@ -2174,9 +2174,9 @@ enhanced-resolve@^3.4.0:
     object-assign "^4.0.1"
     tapable "^0.2.7"
 
-envdotjs@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/envdotjs/-/envdotjs-1.0.2.tgz#dc8e82b8866a9584dc0a197f91533d8f3a3917b1"
+envdotjs@^1.1.3:
+  version "1.1.3"
+  resolved "https://registry.yarnpkg.com/envdotjs/-/envdotjs-1.1.3.tgz#934e7b266d3b538363439faba9ecafc727e6471e"
   dependencies:
     babel-runtime "^6.26.0"
     fs-extra "^5.0.0"
