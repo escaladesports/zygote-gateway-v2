@@ -10,16 +10,13 @@ npm-debug.log*
 node_modules/
 
 # Development/Environment
-.env
-.env-*
 env.js
-env-*.js
+envdotjs-key
 dist
 .next
 json
 public
 .cache
-envdotjs-key
 
 # Temporary
 temp

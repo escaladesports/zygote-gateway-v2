@@ -20,7 +20,7 @@ functions:
 package:
   individually: true
   include:
-    - .env*
+    - env.js.enc
 
 custom:
   optimize:

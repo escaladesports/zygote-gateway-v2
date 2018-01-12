@@ -9,7 +9,7 @@ A bare-bones boilerplate for working with [AWS Lambda functions](https://aws.ama
 - [ES6](http://es6-features.org/) transpiling
 - [Middy](https://middy.js.org/) for easy Lambda middleware
 - [Mocha](https://mochajs.org/)/[Chai](http://chaijs.com/) for unit testing
-- [Dotenv](https://www.npmjs.com/package/dotenv) for environment variables
+- [envdotjs](https://www.npmjs.com/package/envdotjs) for environment variables
 
 ## Installation
 

@@ -1,6 +1,6 @@
 import middy from 'middy'
 import { jsonBodyParser, httpErrorHandler, cors } from 'middy/middlewares'
-import { load } from './utils/envdotjs'
+import { load } from 'envdotjs'
 load()
 
 console.log('TEST:', process.env.TEST)

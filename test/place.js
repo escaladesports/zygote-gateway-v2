@@ -1,5 +1,4 @@
-'use strict'
-const mochaPlugin = require('serverless-mocha-plugin')
+import mochaPlugin from 'serverless-mocha-plugin'
 const expect = mochaPlugin.chai.expect
 const wrapped = mochaPlugin.getWrapper('hello', '/handler.js', 'hello')
 
