@@ -21,7 +21,7 @@ yarn
 
 ## Environment Variables
 
-Environment variables are (by default) managed through 2 .env files. `.env-production` is used for the production stage only, while `.env` is used for all other stages, include local invocations. While this method has some issues with collaboration on environment, it's preferable over [committing your secure credentials to config files](https://12factor.net/config).
+Environment variables are (by default) managed through the `env.js` file. Create an encryption key in a `envdotjs-key` file at the root of your project. Any time you make a change the the `env.js` file, make sure you run `yarn encrypt` after. Only the `env.js.enc` and `envdotjs-key` files will be uploaded to AWS. `env.js` will not get uploaded and will not be checked into .git. So always encrypt after altering the environment file.
 
 ## Deployment
 

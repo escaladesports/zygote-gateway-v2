@@ -38,9 +38,7 @@
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-2017": "^0.0.0",
     "envdotjs": "^1.0.2",
-    "fs-extra": "^5.0.0",
-    "middy": "^0.5.2",
-    "require-from-string": "^2.0.1"
+    "middy": "^0.5.2"
   },
   "babel": {
     "presets": [
