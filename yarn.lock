@@ -3508,8 +3508,8 @@ micromatch@^2.1.5:
     regex-cache "^0.4.2"
 
 middy@^0.5.2:
-  version "0.5.2"
-  resolved "https://registry.yarnpkg.com/middy/-/middy-0.5.2.tgz#4c36682afa153e554d69f8b64c5dfcbcc0571ceb"
+  version "0.5.3"
+  resolved "https://registry.yarnpkg.com/middy/-/middy-0.5.3.tgz#ccd280145054b95a9444705aefb46e83407892f9"
   dependencies:
     "@types/aws-lambda" "0.0.26"
     ajv "^5.2.2"
