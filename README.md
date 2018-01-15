@@ -1,7 +1,5 @@
 # serverless-aws-boilerplate
 
-WIP
-
 A bare-bones boilerplate for working with [AWS Lambda functions](https://aws.amazon.com/lambda/) in the [Serverless framework](https://serverless.com/).
 
 ## Features
@@ -22,6 +20,8 @@ yarn
 ## Environment Variables
 
 Environment variables are (by default) managed through the `env.js` file. Create an encryption key in a `envdotjs-key` file at the root of your project. Any time you make a change the the `env.js` file, make sure you run `yarn encrypt` after. Only the `env.js.enc` and `envdotjs-key` files will be uploaded to AWS. `env.js` will not get uploaded and will not be checked into .git. So always encrypt after altering the environment file.
+
+For more info, see the [envdotjs documentation](https://github.com/escaladesports/envdotjs).
 
 ## Deployment
 
