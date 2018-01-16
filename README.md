@@ -8,6 +8,7 @@ A bare-bones boilerplate for working with [AWS Lambda functions](https://aws.ama
 - [Middy](https://middy.js.org/) for easy Lambda middleware
 - [Mocha](https://mochajs.org/)/[Chai](http://chaijs.com/) for unit testing
 - [envdotjs](https://www.npmjs.com/package/envdotjs) for environment variables
+- [TravisCI](https://travis-ci.org/) for continuous integration & delivery
 
 ## Installation
 
@@ -25,4 +26,6 @@ For more info, see the [envdotjs documentation](https://github.com/escaladesport
 
 ## Deployment
 
-`yarn deploy` will deploy to a staging environment. Use `yarn deploy-production` to deploy to production. All unit tests must pass a production test for a production deploy to succeed. You can modify the production deployment script in `package.json` if this needs to be changed.
+Deployment should be handled by TravisCI automatically. This will ensure that all branches have their own separate deploys and that everything is in sync with the repository.
+
+If this does not work for your use case, `yarn deploy` will deploy to a staging environment. Use `yarn deploy-production` to deploy to production. All unit tests must pass a production test for a production deploy to succeed. You can modify the production deployment script in `package.json` if this needs to be changed.
