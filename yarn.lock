@@ -2166,6 +2166,10 @@ execa@^0.7.0:
     signal-exit "^3.0.0"
     strip-eof "^1.0.0"
 
+exeq@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/exeq/-/exeq-3.0.0.tgz#7f5fb572a433e3a32b5574fc102c4941e9bd5a68"
+
 exit-hook@^1.0.0:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/exit-hook/-/exit-hook-1.1.1.tgz#f05ca233b48c05d54fff07765df8507e95c02ff8"
