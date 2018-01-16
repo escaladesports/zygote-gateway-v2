@@ -6,4 +6,4 @@ cache:
     - node_modules
 script:
   - npm i -g serverless
-  - sls deploy
+  - npm run deploy
