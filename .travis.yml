@@ -5,4 +5,5 @@ cache:
   directories:
     - node_modules
 script:
+  - SLS_DEBUG=* serverless invoke test --stage $TRAVIS_BRANCH --compilers js:babel-core/register
   - SLS_DEBUG=* serverless deploy --verbose --stage $TRAVIS_BRANCH
