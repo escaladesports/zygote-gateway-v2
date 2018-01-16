@@ -29,7 +29,6 @@
     "babel-preset-stage-3": "^6.24.1",
     "babel-register": "^6.26.0",
     "exeq": "^3.0.0",
-    "git-branch": "^1.0.0",
     "git-rev-promises": "^1.0.8",
     "husky": "^0.14.3",
     "serverless": "^1.25.0",
