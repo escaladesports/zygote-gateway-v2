@@ -4,14 +4,13 @@ provider:
   name: aws
   runtime: nodejs6.10
   region: us-east-1
-  #profile: default
   stage: ${opt:stage, 'development'}
   environment:
     NODE_ENV: ${opt:stage, 'development'}
 
 functions:
   hello:
-    handler: handler.hello
+    handler: src/handler.hello
     events:
       - http:
           path: handler

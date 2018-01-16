@@ -1,6 +1,6 @@
 import mochaPlugin from 'serverless-mocha-plugin'
 const expect = mochaPlugin.chai.expect
-const wrapped = mochaPlugin.getWrapper('hello', '/handler', 'hello')
+const wrapped = mochaPlugin.getWrapper('hello', '/src/handler', 'hello')
 
 describe('Result', () => {
 	it('should always pass', () =>{

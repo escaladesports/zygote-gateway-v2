@@ -1,7 +1,7 @@
 {
   "name": "serverless-aws-boilerplate",
   "version": "0.0.0",
-  "main": "handler.js",
+  "main": "src/handler.js",
   "author": "Kennedy Rose <krose@escaladesports.com>",
   "license": "MIT",
   "scripts": {
