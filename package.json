@@ -6,8 +6,8 @@
   "license": "MIT",
   "scripts": {
     "build": "serverless package",
-    "deploy": "serverless deploy --verbose --stage staging",
-    "deploy-production": "yarn test-production && yn && serverless deploy --verbose --stage production",
+    "deploy": "SLS_DEBUG=* serverless deploy --verbose --stage staging",
+    "deploy-production": "SLS_DEBUG=* npm run test-production && yn && serverless deploy --verbose --stage production",
     "encrypt": "envdotjs",
     "invoke": "serverless invoke local --function hello",
 	 "logs": "serverless logs --tail --stage staging --function hello",
