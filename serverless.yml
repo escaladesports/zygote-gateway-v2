@@ -24,11 +24,6 @@ package:
     - env.js.enc
     - envdotjs-key
 
-custom:
-  optimize:
-    presets: ['es2015', 'stage-3']
-    plugins: ['transform-runtime']
-
 plugins:
   - serverless-plugin-optimize
   - serverless-mocha-plugin

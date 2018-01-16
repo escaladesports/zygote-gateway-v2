@@ -10,7 +10,8 @@
     "deploy-production": "yarn test-production && yn && serverless deploy --verbose --stage production",
     "encrypt": "envdotjs",
     "invoke": "serverless invoke local --function hello",
-    "logs": "serverless logs --tail --stage staging --function hello",
+	 "logs": "serverless logs --tail --stage staging --function hello",
+	 "reset": "rm -rf .git && git init && git add . && git commit -m 'Initial commit'",
     "test": "SLS_DEBUG=* serverless invoke test --compilers js:babel-core/register",
     "test-production": "serverless invoke test --stage production --compilers js:babel-core/register",
     "test-live": "SLS_DEBUG=* serverless invoke test --stage staging --compilers js:babel-core/register --live",
@@ -35,14 +36,5 @@
   "dependencies": {
     "envdotjs": "^1.1.3",
     "middy": "^0.5.2"
-  },
-  "babel": {
-    "presets": [
-      "es2015",
-      "stage-3"
-    ],
-    "plugins": [
-      "transform-runtime"
-    ]
   }
 }
