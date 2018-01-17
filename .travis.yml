@@ -3,8 +3,10 @@ cache:
   directories:
     - node_modules
 script:
-  - SLS_DEBUG=* serverless invoke test --stage $(["$TRAVIS_BRANCH" == master] && "production" || "$TRAVIS_BRANCH") --compilers js:babel-core/register
-  - SLS_DEBUG=* serverless deploy --verbose --stage $(["$TRAVIS_BRANCH" == master] && "production" || "$TRAVIS_BRANCH")
+  - if [ "$TRAVIS_BRANCH" = "master" ]; then SLS_DEBUG=* serverless invoke test --stage production --compilers js:babel-core/register; fi
+  - if [ "$TRAVIS_BRANCH" = "master" ]; then SLS_DEBUG=* serverless deploy --verbose --stage production; fi
+  - if [ "$TRAVIS_BRANCH" != "master" ]; then SLS_DEBUG=* serverless invoke test --stage $TRAVIS_BRANCH --compilers js:babel-core/register; fi
+  - if [ "$TRAVIS_BRANCH" != "master" ]; then SLS_DEBUG=* serverless deploy --verbose --stage $TRAVIS_BRANCH; fi
 notifications:
   email:
     on_success: never
