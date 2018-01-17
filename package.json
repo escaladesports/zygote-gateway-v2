@@ -7,7 +7,7 @@
   "scripts": {
     "build": "serverless package",
     "deploy": "SLS_DEBUG=* serverless deploy --verbose --stage staging",
-    "deploy-production": "SLS_DEBUG=* npm run test-production && yn && serverless deploy --verbose --stage master",
+    "deploy-production": "SLS_DEBUG=* npm run test-production && yn && serverless deploy --verbose --stage production",
     "encrypt": "envdotjs",
     "invoke": "serverless invoke local --function hello",
     "logs": "serverless logs --tail --stage staging --function hello",
