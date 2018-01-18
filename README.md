@@ -1,5 +1,7 @@
 # serverless-aws-boilerplate
 
+[![Build Status](https://travis-ci.org/escaladesports/serverless-aws-boilerplate.svg?branch=master)](https://travis-ci.org/escaladesports/serverless-aws-boilerplate)
+
 A bare-bones boilerplate for working with [AWS Lambda functions](https://aws.amazon.com/lambda/) in the [Serverless framework](https://serverless.com/).
 
 ## Features
