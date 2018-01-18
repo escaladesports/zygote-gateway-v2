@@ -5,7 +5,7 @@ if(stage === 'master'){
 	stage = 'production'
 }
 else{
-	stage = stage.replace(/[^a-zA-Z0-9]/g, '_')
+	stage = stage.replace(/[^a-zA-Z0-9]/g, '')
 }
 
 async function cmd(str){
