@@ -10,7 +10,7 @@ else{
 
 async function deploy(){
 	try {
-		await exeq(
+		await cmd(
 			`SLS_DEBUG=* serverless invoke test --stage ${stage} --compilers js:babel-core/register`,
 			`SLS_DEBUG=* serverless deploy --verbose --stage ${stage}`,
 		)
