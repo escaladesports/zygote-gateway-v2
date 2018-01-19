@@ -8,6 +8,7 @@
     "build": "serverless package",
     "deploy": "SLS_DEBUG=* serverless deploy --verbose --stage staging",
     "deploy-production": "SLS_DEBUG=* npm run test-production && yn && serverless deploy --verbose --stage production",
+    "dev": "serverless offline",
     "encrypt": "envdotjs",
     "invoke": "serverless invoke local --function hello",
     "logs": "serverless logs --tail --stage staging --function hello",
@@ -40,6 +41,7 @@
   },
   "dependencies": {
     "envdotjs": "^1.1.3",
-    "middy": "^0.5.2"
+    "middy": "^0.5.2",
+    "serverless-offline": "^3.16.0"
   }
 }
