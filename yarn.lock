@@ -3177,9 +3177,9 @@ es6-weak-map@^2.0.1:
     es6-iterator "^2.0.1"
     es6-symbol "^3.1.1"
 
-esca-scripts@^0.8.6:
-  version "0.8.6"
-  resolved "https://registry.yarnpkg.com/esca-scripts/-/esca-scripts-0.8.6.tgz#3d2cc1582dcf64d5745af78ee8e091017321db8b"
+esca-scripts@^0.9.0:
+  version "0.9.0"
+  resolved "https://registry.yarnpkg.com/esca-scripts/-/esca-scripts-0.9.0.tgz#534d4662ffc1faacb73b1ce6d3f278dda2eef86c"
   dependencies:
     babel-cli "^6.26.0"
     babel-core "^6.26.0"
@@ -3197,6 +3197,7 @@ esca-scripts@^0.8.6:
     css-mqpacker "^6.0.2"
     cssnano "^3.10.0"
     fs-extra "^5.0.0"
+    git-rev-promises "^1.0.8"
     html-loader "^0.5.5"
     html-webpack-plugin "^2.30.1"
     json2yaml "^1.1.0"
@@ -7784,7 +7785,7 @@ static-extend@^0.1.1:
     define-property "^0.2.5"
     object-copy "^0.1.0"
 
-static-server@escaladesports/static-server:
+"static-server@github:escaladesports/static-server":
   version "3.0.0"
   resolved "https://codeload.github.com/escaladesports/static-server/tar.gz/0ef140cc5af48cba5249575df2bce1a6ca702f6f"
   dependencies:
