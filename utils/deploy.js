@@ -20,6 +20,7 @@ async function cmd(str){
 }
 
 async function deploy(){
+	console.log('PULL REQUEST:', process.env.TRAVIS_PULL_REQUEST)
 	if (!process.env.TRAVIS_PULL_REQUEST) {
 		await cmd(`SLS_DEBUG=* serverless invoke test --stage ${stage} --compilers js:babel-core/register`)
 		await cmd(`SLS_DEBUG=* serverless deploy --verbose --stage ${stage}`)
