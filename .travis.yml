@@ -3,9 +3,8 @@ cache:
   directories:
     - node_modules
 script:
-  - babel-node utils/deploy
+  - esca-scripts test --serverless && esca-scripts deploy --serverless
 notifications:
   email:
     on_success: never
     on_failure: always
-
