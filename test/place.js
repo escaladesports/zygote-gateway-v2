@@ -17,4 +17,7 @@ describe('Result', () => {
 		expect(res.body.result).to.not.be.empty
 		expect(res.body.result).to.equal('success')
 	})
+	it('should pull in environment variables', () => {
+		expect(process.env.TEST_KEY).to.equal('true')
+	})
 })
