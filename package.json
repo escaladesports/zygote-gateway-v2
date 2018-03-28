@@ -15,7 +15,8 @@
     "prepush": "esca-scripts prevent-push",
     "reset": "rm -rf .git && git init && git add . && git commit -m 'Initial commit'",
     "test": "esca-scripts test --serverless --stage staging",
-    "test-production": "esca-scripts test --serverless --stage production",
+	 "test-production": "esca-scripts test --serverless --stage production",
+	 "travis": "opn https://travis-ci.org/escaladesports/serverless-aws-boilerplate/branches",
     "unencrypt": "envdotjs --unencrypt"
   },
   "devDependencies": {
@@ -33,6 +34,7 @@
     "exeq": "^3.0.0",
     "git-rev-promises": "^1.0.8",
     "husky": "^0.14.3",
+    "opn-cli": "^3.1.0",
     "serverless": "^1.25.0",
     "serverless-mocha-plugin": "^1.7.0",
     "serverless-plugin-optimize": "^3.0.4-rc.1",
