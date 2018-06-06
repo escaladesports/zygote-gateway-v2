@@ -43,6 +43,7 @@
   },
   "dependencies": {
     "envdotjs": "^1.1.8",
+    "isomorphic-fetch": "^2.2.1",
     "middy": "^0.5.2",
     "serverless-offline": "^3.16.0"
   }

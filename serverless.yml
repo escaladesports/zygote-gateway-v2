@@ -1,4 +1,4 @@
-service: serverless-aws-boilerplate
+service: zygote-api-v2
 
 provider:
   name: aws
@@ -10,11 +10,11 @@ provider:
     ENVDOTJS_KEY: ${env:ENVDOTJS_KEY}
 
 functions:
-  hello:
-    handler: src/handler.hello
+  endpoint:
+    handler: src/handler.endpoint
     events:
       - http:
-          path: handler
+          path: /
           method: post
           cors: true
 
