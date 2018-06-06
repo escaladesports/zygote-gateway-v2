@@ -13,6 +13,10 @@ module.exports.endpoint = middy(async (event, context, callback) => {
   const res = await api(formattedBody);
   callback(null, {
     statusCode: 200,
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Credentials': true
+    },
     body: res.rates.locations
   });
 })
