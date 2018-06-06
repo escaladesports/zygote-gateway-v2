@@ -1,6 +1,6 @@
 # System generated files
 .DS_Store
-
+.nvmrc
 # Logs
 logs
 *.log
@@ -23,3 +23,4 @@ temp
 temp-*
 .serverless
 _optimize
+
