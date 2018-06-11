@@ -11,7 +11,7 @@
     "dev": "esca-scripts dev --serverless",
     "encrypt": "envdotjs",
     "invoke": "serverless invoke local --function hello",
-    "logs": "esca-scripts logs",
+    "logs": "serverless logs --function endpoint --tail",
     "reset": "rm -rf .git && git init && git add . && git commit -m 'Initial commit'",
     "test": "esca-scripts test --serverless --stage staging",
     "test-production": "esca-scripts test --serverless --stage production",

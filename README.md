@@ -1,1 +1,1 @@
-Production: https://jgyozr7dgl.execute-api.us-east-1.amazonaws.com/staging
+Production: https://71zp2pscp3.execute-api.us-east-1.amazonaws.com/development/
