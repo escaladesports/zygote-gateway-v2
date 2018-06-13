@@ -35,6 +35,21 @@ export default body => {
         email: body.billingEmail
       }
   updated.getshipquotes = 1
+  if (body.setShip) {
+    let updatedsetship = {}
+    Object.keys(body.setShip).forEach(k => {
+      updatedsetship = {
+        ...updatedsetship,
+        location: k,
+        option: body.setShip[k]
+      }
+    })
+    if (
+      Object.keys(updatedsetship).length === Object.keys(body.setShip).length
+    ) {
+      updated.setship = updatedsetship
+    }
+  }
 
   return updated
 }

@@ -5,13 +5,16 @@ export default async formattedBody => {
   })
     .then(res => res.json())
     .catch(err => {
-      return err
+      return { errors: err }
     })
 
   if (res) {
-    return res
     const { cart } = res
     let updated = {}
+    // remove this prop before production
+    updated.res = res
+    // remove this prop before production
+    updated.formattedBody = formattedBody
     updated.success = res.success
     updated.cartId = cart.cart_id
     updated.delivery = cart.delivery
@@ -25,8 +28,8 @@ export default async formattedBody => {
     if (cart.shipping && cart.shipping.locations) {
       updated.shippingOptions = {}
       Object.keys(cart.shipping.locations).forEach(k => {
-        const { products, options, type } = cart.shipping.locations[k]
-
+        const { products, options, type, selected } = cart.shipping.locations[k]
+        if (k === 'combined') return
         updated.shippingOptions = {
           ...updated.shippingOptions,
           [k]:
@@ -39,7 +42,9 @@ export default async formattedBody => {
                       })
                     : Object.keys(products).map(product => {
                         return { id: products[product].toLowerCase() }
-                      })
+                      }),
+                  selected: selected ? selected : null,
+                  type: type
                 }
               : {
                   options: options,
@@ -47,7 +52,9 @@ export default async formattedBody => {
                     return {
                       id: productId.toLowerCase()
                     }
-                  })
+                  }),
+                  selected: selected ? selected : null,
+                  type: type
                 }
         }
       })
