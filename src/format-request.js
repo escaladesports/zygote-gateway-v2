@@ -1,3 +1,6 @@
+import jwt from 'jsonwebtoken'
+import md5 from 'md5'
+
 export default body => {
   let updated = {}
   let products = {}
@@ -21,33 +24,56 @@ export default body => {
     phone: body.shippingPhone,
     email: body.shippingEmail
   }
-  updated.billing = body.addressSame
-    ? 'delivery'
-    : {
-        first_name: body.billingFirst,
-        last_name: body.billingLast,
-        street1: body.billingAddress,
-        city: body.billingCity,
-        state: body.billingState,
-        zip: body.billingZip,
-        country: body.billingCountry || 'US',
-        phone: body.billingPhone,
-        email: body.billingEmail
-      }
+  updated.billing = 'delivery'
+
   updated.getshipquotes = 1
   if (body.setShip) {
     let updatedsetship = {}
     Object.keys(body.setShip).forEach(k => {
-      updatedsetship = {
-        ...updatedsetship,
-        location: k,
-        option: body.setShip[k]
-      }
+      updatedsetship = { ...updatedsetship, [k]: body.setShip[k] }
     })
-    if (
-      Object.keys(updatedsetship).length === Object.keys(body.setShip).length
-    ) {
-      updated.setship = updatedsetship
+    updated.setship = updatedsetship
+    delete updated['getshipquotes']
+    delete updated['billing']
+    delete updated['delivery']
+    delete updated['products']
+  }
+
+  if (body.billingNumber || body.billingSecurity || body.billingExpiration) {
+    const currentYear = new Date()
+      .getFullYear()
+      .toString()
+      .slice(0, 2)
+    const splitExpiration = body.billingExpiration.split('/')
+    const month = splitExpiration[0]
+    const year = currentYear + splitExpiration[1]
+
+    let paymentObj = {
+      cc: {
+        number: body.billingNumber,
+        expire: {
+          month: month,
+          year: year
+        },
+        code: body.billingSecurity
+      }
+    }
+
+    updated.payment = jwt.sign(paymentObj, md5(updated.site))
+    delete updated['setship']
+  }
+
+  if (!body.addressSame) {
+    updated.billing = {
+      first_name: body.shippingFirst,
+      last_name: body.shippingLast,
+      street1: body.billingAddress,
+      city: body.billingCity,
+      state: body.billingState,
+      zip: body.billingZip,
+      country: body.billingCountry || 'US',
+      phone: body.shippingPhone,
+      email: body.shippingEmail
     }
   }
 
