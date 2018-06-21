@@ -4,15 +4,30 @@ import md5 from 'md5'
 export default body => {
   let updated = {}
   let products = {}
-  body.products.forEach(product => {
-    products[product.id] = {
-      sku: product.id,
-      qty: product.qty
-    }
-  })
+  if (body.products) {
+    body.products.forEach(product => {
+      products[product.id] = {
+        sku: product.id,
+        qty: product.qty
+      }
+    })
+    updated.products = products
+  }
   updated.site = body.site
   updated.cart_id = body.cartId || ''
-  updated.products = products
+  if (body.addCoupon) {
+    updated['add-coupon'] = body.addCoupon
+    return updated
+  }
+  if (body.replaceCoupon) {
+    updated['replace-coupon'] = body.replaceCoupon
+    return updated
+  }
+  if (body.removeCoupon) {
+    updated['remove-coupon'] = body.removeCoupon
+    return updated
+  }
+
   updated.delivery = {
     first_name: body.shippingFirst,
     last_name: body.shippingLast,
@@ -61,6 +76,7 @@ export default body => {
 
     updated.payment = jwt.sign(paymentObj, md5(updated.site))
     delete updated['setship']
+    delete updated['add-coupon']
   }
 
   if (!body.addressSame) {

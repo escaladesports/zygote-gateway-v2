@@ -17,6 +17,7 @@ export default async formattedBody => {
   if (res) {
     const { cart } = res
     updated.success = res.success
+    updated.coupons = cart.coupons || null
     updated.cartId = cart.cart_id
     updated.delivery = cart.delivery
     updated.billing = cart.billing
@@ -52,6 +53,8 @@ export default async formattedBody => {
           }
         }
       })
+    } else if (!cart.shipping) {
+      updated.shippingOptions = {}
     } else if (cart.shipping.errors) {
       updated.errors = [...updated.errors, 'Error with shipping options']
     } else {

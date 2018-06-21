@@ -14,6 +14,7 @@
     "logs": "serverless logs --function endpoint --tail",
     "reset": "rm -rf .git && git init && git add . && git commit -m 'Initial commit'",
     "test": "jest",
+    "test-watch": "jest --watchAll",
     "test-production": "esca-scripts test --serverless --stage production",
     "travis": "opn https://travis-ci.org/escaladesports/serverless-aws-boilerplate/branches",
     "unencrypt": "envdotjs --unencrypt"
